@@ -2,6 +2,8 @@ const card1 = document.querySelector(".flip-card-1");
 const card2 = document.querySelector(".flip-card-2");
 const card3 = document.querySelector(".flip-card-3");
 
+
+
 //Object to keep track of the guesses
 
 const guesses =  {
@@ -14,12 +16,10 @@ const guesses =  {
     timerStarted: false,
 }
 
-
 // array for storing the 2 cards the user picks, so they can be moved around
 let removeCards = [];
 // Make an array with each card
 const cardArray = Array.from(document.querySelectorAll(".flip-card"));
-console.log(cardArray);
 
 const timeDisplay = document.querySelector(".time-display");
 // for each loop that switches the card click to the backside
@@ -35,7 +35,6 @@ cardArray.forEach( card =>{
             guesses.timerStarted = true
             setInterval(()=>{
                 guesses.timer++
-                timeDisplay.textContent = `Tid: ${guesses.timer}`;
             }, 1000);
         };
         card.style.transform = "rotateY(180deg)";
@@ -82,7 +81,7 @@ function checkMatch(){
     }
     // if all cards are guessed, alert that the user wins and reload the page
     if (guesses.score === 3){
-        alert(`You Win! Your time was ${guesses.timer}`);
+        alert(`You Win! Your time was ${guesses.timer} seconds!`);
         // reset the score so the statement moves on from spamming you win
         guesses.score = 0;
         location.reload();
@@ -91,3 +90,26 @@ function checkMatch(){
 
 const grid = document.querySelector(".card-grid");
 
+const gridTemplateArray = [
+    "flip-card-1", 
+    "flip-card-2",
+    "flip-card-3",
+    "flip-card-4",
+    "flip-card-5",
+    "flip-card-6",
+    ]
+    
+    const newGridTemplateArray = [];
+    
+    function shuffle(){
+        for (let i = 0; i < 6; i++){
+            let arrayNum = gridTemplateArray[Math.floor(Math.random()*gridTemplateArray.length)];
+            newGridTemplateArray.push(arrayNum);
+            let arrayNumIndex = gridTemplateArray.indexOf(arrayNum);
+            gridTemplateArray.splice(arrayNumIndex, 1);
+        }
+    }
+    
+shuffle();
+grid.style.gridTemplateAreas = `"${newGridTemplateArray[0]} ${newGridTemplateArray[1]} ${newGridTemplateArray[2]}"
+"${newGridTemplateArray[3]} ${newGridTemplateArray[4]} ${newGridTemplateArray[5]}"`;
