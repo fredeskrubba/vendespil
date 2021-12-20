@@ -80,7 +80,7 @@ function checkMatch(){
         guesses.score += 1;
     }
     // if all cards are guessed, alert that the user wins and reload the page
-    if (guesses.score === 3){
+    if (guesses.score === 6){
         alert(`You Win! Your time was ${guesses.timer} seconds!`);
         // reset the score so the statement moves on from spamming you win
         guesses.score = 0;
@@ -97,12 +97,18 @@ const gridTemplateArray = [
     "flip-card-4",
     "flip-card-5",
     "flip-card-6",
+    "flip-card-7",
+    "flip-card-8",
+    "flip-card-9",
+    "flip-card-10",
+    "flip-card-11",
+    "flip-card-12",
     ]
     
     const newGridTemplateArray = [];
     
     function shuffle(){
-        for (let i = 0; i < 6; i++){
+        for (let i = 0; i < 12; i++){
             let arrayNum = gridTemplateArray[Math.floor(Math.random()*gridTemplateArray.length)];
             newGridTemplateArray.push(arrayNum);
             let arrayNumIndex = gridTemplateArray.indexOf(arrayNum);
@@ -111,5 +117,7 @@ const gridTemplateArray = [
     }
     
 shuffle();
-grid.style.gridTemplateAreas = `"${newGridTemplateArray[0]} ${newGridTemplateArray[1]} ${newGridTemplateArray[2]}"
-"${newGridTemplateArray[3]} ${newGridTemplateArray[4]} ${newGridTemplateArray[5]}"`;
+grid.style.gridTemplateAreas = `"${newGridTemplateArray[0]} ${newGridTemplateArray[1]} ${newGridTemplateArray[2]} ${newGridTemplateArray[3]}"
+"${newGridTemplateArray[4]} ${newGridTemplateArray[5]} ${newGridTemplateArray[6]} ${newGridTemplateArray[7]}"
+"${newGridTemplateArray[8]} ${newGridTemplateArray[9]} ${newGridTemplateArray[10]} ${newGridTemplateArray[11]}"
+`;

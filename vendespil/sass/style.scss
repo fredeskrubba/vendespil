@@ -7,8 +7,8 @@
 .card-grid{
     display: grid;
     grid-template-areas: 
-    "flip-card-3 flip-card-6 flip-card-2"
-    "flip-card-4 flip-card-1 flip-card-5";
+    "flip-card-1 flip-card-2 flip-card-3 flip-card-4 flip-card-5 flip-card-6"
+    "flip-card-7 flip-card-8 flip-card-9 flip-card-10 flip-card-11 flip-card-12";
     justify-content: center;
     gap: 5px;
     margin: 5px;
@@ -31,6 +31,24 @@
 }
 .flip-card-container-6{
     grid-area: flip-card-6;
+}
+.flip-card-container-7{
+    grid-area: flip-card-7;
+}
+.flip-card-container-8{
+    grid-area: flip-card-8;
+}
+.flip-card-container-9{
+    grid-area: flip-card-9;
+}
+.flip-card-container-10{
+    grid-area: flip-card-10;
+}
+.flip-card-container-11{
+    grid-area: flip-card-11;
+}
+.flip-card-container-6{
+    grid-area: flip-card-12;
 }
 .flip-card-container{
     width: 300px;
@@ -71,6 +89,21 @@
         }
         .card-3{
             background-image: url("../assets/images/monkey-3.jpg");
+            background-size: cover;
+            background-position-x: center;
+        }
+        .card-4{
+            background-image: url("../assets/images/monke-4.jpg");
+            background-size: cover;
+            background-position-x: center;
+        }
+        .card-5{
+            background-image: url("../assets/images/monke-5.jpg");
+            background-size: cover;
+            background-position-x: center;
+        }
+        .card-6{
+            background-image: url("../assets/images/monke-6.jpg");
             background-size: cover;
             background-position-x: center;
         }

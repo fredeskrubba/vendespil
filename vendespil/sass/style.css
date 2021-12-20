@@ -7,7 +7,7 @@
 .card-grid {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "flip-card-3 flip-card-6 flip-card-2" "flip-card-4 flip-card-1 flip-card-5";
+      grid-template-areas: "flip-card-1 flip-card-2 flip-card-3 flip-card-4 flip-card-5 flip-card-6" "flip-card-7 flip-card-8 flip-card-9 flip-card-10 flip-card-11 flip-card-12";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -16,39 +16,75 @@
 }
 
 .flip-card-container-1 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: flip-card-1;
 }
 
 .flip-card-container-2 {
   -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  -ms-grid-column: 2;
   grid-area: flip-card-2;
 }
 
 .flip-card-container-3 {
   -ms-grid-row: 1;
-  -ms-grid-column: 1;
+  -ms-grid-column: 3;
   grid-area: flip-card-3;
 }
 
 .flip-card-container-4 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
   grid-area: flip-card-4;
 }
 
 .flip-card-container-5 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
   grid-area: flip-card-5;
 }
 
 .flip-card-container-6 {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 6;
   grid-area: flip-card-6;
+}
+
+.flip-card-container-7 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: flip-card-7;
+}
+
+.flip-card-container-8 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: flip-card-8;
+}
+
+.flip-card-container-9 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: flip-card-9;
+}
+
+.flip-card-container-10 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: flip-card-10;
+}
+
+.flip-card-container-11 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: flip-card-11;
+}
+
+.flip-card-container-6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  grid-area: flip-card-12;
 }
 
 .flip-card-container {
@@ -112,6 +148,24 @@
 
 .flip-card-container .flip-card .card-3 {
   background-image: url("../assets/images/monkey-3.jpg");
+  background-size: cover;
+  background-position-x: center;
+}
+
+.flip-card-container .flip-card .card-4 {
+  background-image: url("../assets/images/monke-4.jpg");
+  background-size: cover;
+  background-position-x: center;
+}
+
+.flip-card-container .flip-card .card-5 {
+  background-image: url("../assets/images/monke-5.jpg");
+  background-size: cover;
+  background-position-x: center;
+}
+
+.flip-card-container .flip-card .card-6 {
+  background-image: url("../assets/images/monke-6.jpg");
   background-size: cover;
   background-position-x: center;
 }
