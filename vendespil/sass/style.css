@@ -7,13 +7,48 @@
 .card-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+      grid-template-areas: "flip-card-3 flip-card-6 flip-card-2" "flip-card-4 flip-card-1 flip-card-5";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   gap: 5px;
   margin: 5px;
+}
+
+.flip-card-container-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: flip-card-1;
+}
+
+.flip-card-container-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: flip-card-2;
+}
+
+.flip-card-container-3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: flip-card-3;
+}
+
+.flip-card-container-4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: flip-card-4;
+}
+
+.flip-card-container-5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: flip-card-5;
+}
+
+.flip-card-container-6 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: flip-card-6;
 }
 
 .flip-card-container {

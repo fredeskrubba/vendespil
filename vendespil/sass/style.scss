@@ -6,10 +6,31 @@
 
 .card-grid{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    "flip-card-3 flip-card-6 flip-card-2"
+    "flip-card-4 flip-card-1 flip-card-5";
     justify-content: center;
     gap: 5px;
     margin: 5px;
+}
+.flip-card-container-1{
+    grid-area: flip-card-1;
+}
+
+.flip-card-container-2{
+    grid-area: flip-card-2;
+}
+.flip-card-container-3{
+    grid-area: flip-card-3;
+}
+.flip-card-container-4{
+    grid-area: flip-card-4;
+}
+.flip-card-container-5{
+    grid-area: flip-card-5;
+}
+.flip-card-container-6{
+    grid-area: flip-card-6;
 }
 .flip-card-container{
     width: 300px;
