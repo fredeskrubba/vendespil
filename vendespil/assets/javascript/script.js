@@ -1,9 +1,8 @@
-const card1 = document.querySelector(".flip-card-1");
-const card2 = document.querySelector(".flip-card-2");
-const card3 = document.querySelector(".flip-card-3");
-
-
-
+const endScreen = document.querySelector(".end-screen");
+const restartButton = document.querySelector(".restart-button");
+const timeLine = document.querySelector(".time-line");
+const scoreLine = document.querySelector(".score-line");
+const endTimer = document.querySelector(".end-timer");
 //Object to keep track of the guesses
 
 const guesses =  {
@@ -14,9 +13,11 @@ const guesses =  {
     timer: 0,
     gameActive: false,
     timerStarted: false,
-}
+};
 
+let interval = null;
 // array for storing the 2 cards the user picks, so they can be moved around
+let matchCards = [];
 let removeCards = [];
 // Make an array with each card
 const cardArray = Array.from(document.querySelectorAll(".flip-card"));
@@ -33,7 +34,8 @@ cardArray.forEach( card =>{
             // timerStarted is used for making sure the timer only goes up by 1
             // if it isn't used the timer goes up by one more each time a card is picked
             guesses.timerStarted = true
-            setInterval(()=>{
+            interval = setInterval(()=>{
+                timeLine.textContent = `Tid: ${guesses.timer}`;
                 guesses.timer++
             }, 1000);
         };
@@ -56,38 +58,44 @@ cardArray.forEach( card =>{
         // hvis der er et match, kig i remove cards arrayet og skjul de matchende kort
         if (guesses.match === true){
             for (element of removeCards){
-                element.style.display = "none";
+                matchCards.push(element);
             };
         } else if (guesses.match === false && guesses.guess1 !== "" && guesses.guess2 !== 0){
             for (element of removeCards){
-                element.style.transform = "rotateY(360deg)";
-                element.style.color = "black";
-                removeCards = [];
-                guesses.guess1 = "";
-                guesses.guess2 = 0;
+                if (!matchCards.includes(element)){
+                    element.style.transform = "rotateY(360deg)";
+                    element.style.color = "black";
+                    removeCards = [];
+                    guesses.guess1 = "";
+                    guesses.guess2 = 0;
+                };
             };
-        }
+        };
         guesses.match = false;
     });
 });
 // function that hides the two cards if they're a match
 function checkMatch(){
     if (guesses.guess1 === guesses.guess2){
-        alert("It's a match");
-        guesses.match = true
+        guesses.match = true;
         guesses.guess1 = "";
         guesses.guess2 = 0;
         guesses.score += 1;
+        scoreLine.textContent = `Score: ${guesses.score}`;
     }
     // if all cards are guessed, alert that the user wins and reload the page
     if (guesses.score === 6){
-        alert(`You Win! Your time was ${guesses.timer} seconds!`);
+        endScreen.style.display = "flex";
+        endTimer.textContent = `Din tid: ${guesses.timer} sekunder!`;
+        clearInterval(interval);
+        endTimer.style.color = "blue";
         // reset the score so the statement moves on from spamming you win
         guesses.score = 0;
-        location.reload();
     }
 };
-
+restartButton.addEventListener("click", ()=>{
+    location.reload();
+});
 const grid = document.querySelector(".card-grid");
 
 const gridTemplateArray = [
@@ -105,19 +113,19 @@ const gridTemplateArray = [
     "flip-card-12",
     ]
     
-    const newGridTemplateArray = [];
+const newGridTemplateArray = [];
     
-    function shuffle(){
-        for (let i = 0; i < 12; i++){
-            let arrayNum = gridTemplateArray[Math.floor(Math.random()*gridTemplateArray.length)];
-            newGridTemplateArray.push(arrayNum);
-            let arrayNumIndex = gridTemplateArray.indexOf(arrayNum);
-            gridTemplateArray.splice(arrayNumIndex, 1);
-        }
+ function shuffle(){
+    for (let i = 0; i < 12; i++){
+        let arrayNum = gridTemplateArray[Math.floor(Math.random()*gridTemplateArray.length)];
+        newGridTemplateArray.push(arrayNum);
+        let arrayNumIndex = gridTemplateArray.indexOf(arrayNum);
+        gridTemplateArray.splice(arrayNumIndex, 1);
     }
+}
     
 shuffle();
-grid.style.gridTemplateAreas = `"${newGridTemplateArray[0]} ${newGridTemplateArray[1]} ${newGridTemplateArray[2]} ${newGridTemplateArray[3]}"
-"${newGridTemplateArray[4]} ${newGridTemplateArray[5]} ${newGridTemplateArray[6]} ${newGridTemplateArray[7]}"
-"${newGridTemplateArray[8]} ${newGridTemplateArray[9]} ${newGridTemplateArray[10]} ${newGridTemplateArray[11]}"
+grid.style.gridTemplateAreas = `
+"${newGridTemplateArray[0]} ${newGridTemplateArray[1]} ${newGridTemplateArray[2]} ${newGridTemplateArray[3]} ${newGridTemplateArray[4]} ${newGridTemplateArray[5]}"
+"${newGridTemplateArray[6]} ${newGridTemplateArray[7]} ${newGridTemplateArray[8]} ${newGridTemplateArray[9]} ${newGridTemplateArray[10]} ${newGridTemplateArray[11]}"
 `;

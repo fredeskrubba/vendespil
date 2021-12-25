@@ -1,10 +1,89 @@
-* {
+.end-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #222d;
+  top: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.end-screen h2 {
+  color: green;
+  font-size: 80px;
+}
+
+.end-screen h3 {
+  color: green;
+  padding: 10px;
+  background-color: red;
+  border: 5px solid green;
+  font-size: 60px;
+}
+
+.end-screen h3:hover {
+  cursor: pointer;
+}
+
+header {
+  margin-bottom: 5vw;
+  border-bottom: 5px solid black;
+  background-color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+header .header-box {
+  position: relative;
+  margin: 65px;
+  font-family: "Pushster", cursive;
+}
+
+header .header-box h1 {
+  font-size: 70px;
+  color: red;
+}
+
+header .header-box h2 {
+  color: red;
+}
+
+header .score-keeper {
+  position: absolute;
+  right: 300px;
+}
+
+body {
   margin: 0;
   padding: 0;
+  position: relative;
+  background-image: url("/assets/images/winter-landscape.jpg");
+  background-size: cover;
+  height: 100%;
   text-align: center;
 }
 
 .card-grid {
+  position: relative;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "flip-card-1 flip-card-2 flip-card-3 flip-card-4 flip-card-5 flip-card-6" "flip-card-7 flip-card-8 flip-card-9 flip-card-10 flip-card-11 flip-card-12";
@@ -12,7 +91,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 5px;
-  margin: 5px;
+  margin-bottom: 5px;
 }
 
 .flip-card-container-1 {
@@ -88,8 +167,9 @@
 }
 
 .flip-card-container {
-  width: 300px;
-  height: 400px;
+  position: relative;
+  width: 200px;
+  height: 300px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }

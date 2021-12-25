@@ -1,17 +1,24 @@
-* {
+@import "end-screen";
+@import "header";
+body{
     margin: 0;
     padding: 0;
+    position: relative;
+    background-image: url("/assets/images/winter-landscape.jpg");
+    background-size: cover;
+    height: 100%;
     text-align: center;
 }
 
 .card-grid{
+    position: relative;
     display: grid;
     grid-template-areas: 
     "flip-card-1 flip-card-2 flip-card-3 flip-card-4 flip-card-5 flip-card-6"
     "flip-card-7 flip-card-8 flip-card-9 flip-card-10 flip-card-11 flip-card-12";
     justify-content: center;
     gap: 5px;
-    margin: 5px;
+    margin-bottom: 5px;
 }
 .flip-card-container-1{
     grid-area: flip-card-1;
@@ -51,8 +58,9 @@
     grid-area: flip-card-12;
 }
 .flip-card-container{
-    width: 300px;
-    height: 400px;
+    position: relative;
+    width: 200px;
+    height: 300px;
     perspective: 1000px;
     .flip-card{
         position: relative;

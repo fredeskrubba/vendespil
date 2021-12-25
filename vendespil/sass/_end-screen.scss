@@ -1,0 +1,28 @@
+.end-screen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color:  #222d;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    h2{
+        color: green;
+        font-size: 80px;
+    }
+    h3{
+        color: green;
+        padding: 10px;
+        background-color: red;
+        border: 5px solid green;
+        font-size: 60px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+

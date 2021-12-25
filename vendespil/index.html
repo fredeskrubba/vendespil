@@ -7,10 +7,26 @@
     <title>Vendespil</title>
     <link rel="stylesheet" href="sass/style.css">
     <script src="assets/javascript/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Vendespil</h1>
-    <h2>Klik på et kort, og vælg det kort der passer til det.</h2>
+    <header>
+        <article class="header-box">
+            <h1>Vendespil</h1>
+            <h2>Klik på et kort, og vælg det kort der passer til det.</h2>
+        </article>
+        <article class="score-keeper">
+            <h2 class="time-line">Tid: </h2>
+            <h2 class="score-line">Score: </h2>
+        </article>
+    </header>
+    <section class="end-screen">
+        <h2>Du vandt</h2>
+        <h2 class="end-timer">Din tid: 0 Sekunder</h2>
+        <h3 class="restart-button">Spil igen</h3>
+    </section>
     <section class=card-grid>
         <div class="flip-card-container flip-card-container-1">
             <div class="flip-card flip-card-1">

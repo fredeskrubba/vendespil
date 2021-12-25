@@ -1,0 +1,27 @@
+@import "variables";
+
+header{
+    margin-bottom: 5vw;
+    border-bottom: 5px solid black;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .header-box{
+        position: relative;
+        margin: 65px;
+        font-family: $header-font;
+        h1{
+            font-size: 70px;
+            color: red;
+        }
+        h2{
+            color: red;
+        }
+    }
+    .score-keeper{
+        position: absolute;
+        right: 300px;
+    }
+}
